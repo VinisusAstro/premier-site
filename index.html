@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partage de Dépenses - Entre Potes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Partage de Dépenses</h1>
+            <p class="subtitle">Gérez vos dépenses entre amis facilement</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Section Participants -->
+            <section class="card">
+                <h2>👥 Participants</h2>
+                <div class="add-participant">
+                    <input type="text" id="participant-name" placeholder="Nom du participant">
+                    <button onclick="addParticipant()" class="btn btn-primary">Ajouter</button>
+                </div>
+                <div id="participants-list" class="participants-list"></div>
+            </section>
+
+            <!-- Section Dépenses -->
+            <section class="card">
+                <h2>🧾 Ajouter une dépense</h2>
+                <div class="expense-form">
+                    <input type="text" id="expense-description" placeholder="Description (ex: Restaurant)">
+                    <input type="number" id="expense-amount" placeholder="Montant (€)" step="0.01" min="0">
+                    
+                    <label for="expense-payer">Qui a payé ?</label>
+                    <select id="expense-payer">
+                        <option value="">Sélectionner...</option>
+                    </select>
+
+                    <label>Pour qui ? (cochez les participants concernés)</label>
+                    <div id="expense-beneficiaries" class="beneficiaries-list"></div>
+
+                    <button onclick="addExpense()" class="btn btn-success">Enregistrer la dépense</button>
+                </div>
+            </section>
+
+            <!-- Liste des dépenses -->
+            <section class="card">
+                <h2>📋 Dépenses enregistrées</h2>
+                <div id="expenses-list" class="expenses-list"></div>
+            </section>
+
+            <!-- Résumé des dettes -->
+            <section class="card highlight">
+                <h2>💸 Qui doit combien à qui ?</h2>
+                <div id="debts-summary" class="debts-summary"></div>
+            </section>
+        </div>
+
+        <div class="actions">
+            <button onclick="clearAllData()" class="btn btn-danger">Tout effacer</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
