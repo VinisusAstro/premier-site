@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitPotes - Gestion de Dépenses Partagées</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 SplitPotes</h1>
+            <p class="subtitle">Gérez vos dépenses entre amis simplement</p>
+        </header>
+
+        <!-- Section Participants -->
+        <section class="card">
+            <h2>👥 Participants</h2>
+            <div class="input-group">
+                <input type="text" id="participantName" placeholder="Nom du participant">
+                <button onclick="addParticipant()" class="btn btn-primary">Ajouter</button>
+            </div>
+            <div id="participantsList" class="participants-list"></div>
+        </section>
+
+        <!-- Section Dépenses -->
+        <section class="card">
+            <h2>🧾 Nouvelle Dépense</h2>
+            <div class="expense-form">
+                <input type="text" id="expenseDescription" placeholder="Description (ex: Restaurant)">
+                <input type="number" id="expenseAmount" placeholder="Montant (€)" step="0.01" min="0">
+                <select id="expensePayer">
+                    <option value="">Qui a payé ?</option>
+                </select>
+                <div class="beneficiaries-section">
+                    <label>Pour qui ? (cochez les bénéficiaires)</label>
+                    <div id="beneficiariesList" class="beneficiaries-list"></div>
+                </div>
+                <button onclick="addExpense()" class="btn btn-success">Ajouter la dépense</button>
+            </div>
+        </section>
+
+        <!-- Liste des Dépenses -->
+        <section class="card">
+            <h2>📋 Dépenses Enregistrées</h2>
+            <div id="expensesList" class="expenses-list"></div>
+        </section>
+
+        <!-- Résumé des Dettes -->
+        <section class="card highlight">
+            <h2>💸 Qui doit combien à qui ?</h2>
+            <div id="debtsCalculation" class="debts-calculation"></div>
+        </section>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button onclick="clearAll()" class="btn btn-danger">🗑️ Tout effacer</button>
+            <button onclick="exportData()" class="btn btn-secondary">📥 Exporter</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
