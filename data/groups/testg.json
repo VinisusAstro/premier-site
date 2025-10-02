@@ -1,0 +1,29 @@
+{
+  "name": "testg",
+  "members": [
+    "Alice",
+    "Bob",
+    "Chloe"
+  ],
+  "expenses": [
+    {
+      "description": "Dej",
+      "payer": "Alice",
+      "amount": 60.0,
+      "participants": [
+        "Alice",
+        "Bob",
+        "Chloe"
+      ]
+    },
+    {
+      "description": "Uber",
+      "payer": "Bob",
+      "amount": 30.0,
+      "participants": [
+        "Alice",
+        "Bob"
+      ]
+    }
+  ]
+}
